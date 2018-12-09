@@ -7,7 +7,7 @@ public class Poker {
     Random r = new Random(52);
 //   生出52張牌
     public Poker(){
-        for (int i = 0;i<53;i++) {
+        for (int i = 0;i<52;i++) {
             cards[i] = new Cards(i);
         }
     }
@@ -19,7 +19,7 @@ public class Poker {
     }
 
     public void shufle(){
-        for(int i= 0;i<53;i++){
+        for(int i= 0;i<52;i++){
             int j = r.nextInt();
              Cards tmp = cards[i];
              cards[i] = cards[j];
