@@ -18,7 +18,7 @@ public class Poker {
         }
     }
 
-    public void shufle(){
+    public void shuffle(){
         for(int i= 0;i<52;i++){
             int j = r.nextInt();
              Cards tmp = cards[i];

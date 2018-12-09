@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        poker.shuffle();
         RecyclerView pokerlist = findView();
         pokerlist.setHasFixedSize(true);
         pokerlist.setLayoutManager(new LinearLayoutManager(this));
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         @NonNull
         @Override
         public PokerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = getLayoutInflater().inflate(R.layout.card,parent,false);
+            View view = getLayoutInflater().inflate(R.layout.card, parent, false);
             return new PokerViewHolder(view);
         }
 
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         class PokerViewHolder extends RecyclerView.ViewHolder {
             TextView pokertext;
+
             public PokerViewHolder(@NonNull View itemView) {
                 super(itemView);
                 pokertext = itemView.findViewById(R.id.poker_row);
@@ -58,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//  public void shuffle(View view) {
+//    public void shuffle(View view) {
 //        findView();
 //        poker.shufle();
-//  }
+//    }
 }
