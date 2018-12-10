@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        poker.shuffle();
+//        poker.shuffle();
         RecyclerView pokerlist = findView();
         pokerlist.setHasFixedSize(true);
         pokerlist.setLayoutManager(new LinearLayoutManager(this));
@@ -59,8 +59,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    public void shuffle(View view) {
-//        findView();
-//        poker.shufle();
-//    }
+   public void shuffle(View view) {
+      findView();
+    poker.shuffle();
+       RecyclerView pokerlist = findView();
+       pokerlist.setAdapter(new PokerAdpter());
+  }
 }
