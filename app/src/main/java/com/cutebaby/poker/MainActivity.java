@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Poker poker = new Poker();
+    public PokerAdpter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView pokerlist = findView();
         pokerlist.setHasFixedSize(true);
         pokerlist.setLayoutManager(new LinearLayoutManager(this));
-        pokerlist.setAdapter(new PokerAdpter());
+        adapter = new PokerAdpter();
+        pokerlist.setAdapter(adapter);
     }
 
     private RecyclerView findView() {
@@ -61,8 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
    public void shuffle(View view) {
       findView();
-    poker.shuffle();
-       RecyclerView pokerlist = findView();
-       pokerlist.setAdapter(new PokerAdpter());
+      poker.shuffle();
+     adapter.notifyDataSetChanged();
+
+
   }
 }

@@ -20,7 +20,7 @@ public class Poker {
 
     public void shuffle(){
         for(int i= 0;i<52;i++){
-            int j = r.nextInt();
+            int j = r.nextInt(52);
              Cards tmp = cards[i];
              cards[i] = cards[j];
              cards[j] = tmp;
